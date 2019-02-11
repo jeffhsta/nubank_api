@@ -1,5 +1,7 @@
 # Nubank API (nubank_api)
 
+**Work in progress**
+
 It's an Elixir library that abstract the HTTP request into functions.
 
 The goal is to facilitate the developers job to integrate with Nubank's API.

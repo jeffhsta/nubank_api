@@ -4,15 +4,13 @@ defmodule NubankAPI do
   """
 
   @doc """
-  Hello world.
+  Library status
 
   ## Examples
 
-      iex> NubankAPI.hello()
-      :world
+      iex> NubankAPI.status()
+      :wip
 
   """
-  def hello do
-    :world
-  end
+  def status, do: :wip
 end
