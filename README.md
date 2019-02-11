@@ -1,11 +1,17 @@
-# NubankApi
+# Nubank API (nubank_api)
 
-**TODO: Add description**
+It's an Elixir library that abstract the HTTP request into functions.
+
+The goal is to facilitate the developers job to integrate with Nubank's API.
+
+This project was inspired by the repo
+[https://github.com/Astrocoders/nubank-api](https://github.com/Astrocoders/nubank-api), thanks for
+[Astrocoders](https://github.com/Astrocoders) for the work in figure out Nubank's API endpoints/payloads etc.
 
 ## Installation
 
 [Available in Hex](https://hex.pm/packages/nubank_api), the package can be installed
-by adding `nubank_api` to your list of dependencies in `mix.exs`:
+by adding `:nubank_api` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
