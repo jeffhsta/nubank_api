@@ -21,7 +21,9 @@ defmodule NubankAPI.MixProject do
 
   defp deps do
     [
-      {:ex_doc, ">= 0.0.0", only: :dev}
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:httpoison, "~> 1.5"},
+      {:poison, "~> 4.0"}
     ]
   end
 
