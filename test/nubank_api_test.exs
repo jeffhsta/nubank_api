@@ -1,8 +1,8 @@
-defmodule NubankApiTest do
+defmodule NubankAPITest do
   use ExUnit.Case
-  doctest NubankApi
+  doctest NubankAPI
 
   test "greets the world" do
-    assert NubankApi.hello() == :world
+    assert NubankAPI.hello() == :world
   end
 end

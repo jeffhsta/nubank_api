@@ -1,4 +1,4 @@
-defmodule NubankApi.MixProject do
+defmodule NubankAPI.MixProject do
   use Mix.Project
 
   def project do

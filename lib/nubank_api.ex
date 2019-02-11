@@ -1,6 +1,6 @@
-defmodule NubankApi do
+defmodule NubankAPI do
   @moduledoc """
-  Documentation for NubankApi.
+  NubankAPI is the main module.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule NubankApi do
 
   ## Examples
 
-      iex> NubankApi.hello()
+      iex> NubankAPI.hello()
       :world
 
   """
