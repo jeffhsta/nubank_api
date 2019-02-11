@@ -3,7 +3,8 @@ defmodule NubankAPI.Auth do
 
   def get_token(login, password) when is_bitstring(login) and is_bitstring(password) do
     with %{url: url, headers: headers, body: body} = prepare_request_data(login, password),
-         {:ok, %{body: body}} <- HTTPoison.post(url, body, headers),
+         {:ok, %{status_code: status_code, body: body}} <- HTTPoison.post(url, body, headers),
+         true <- status_code in 200..299,
          {:ok, parsed_body} <- Poison.decode(body),
          {:ok, data} <- extract_response_data(parsed_body) do
       {:ok, data}
