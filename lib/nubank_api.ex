@@ -40,6 +40,7 @@ defmodule NubankAPI do
 
   defp parse_single_transaction(transaction) do
     {:ok, transaction_datetime, 0} = DateTime.from_iso8601(transaction["time"])
+
     %{
       id: transaction["id"],
       description: transaction["description"],

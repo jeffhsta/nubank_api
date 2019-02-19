@@ -4,7 +4,7 @@ defmodule NubankAPI.Auth do
   def get_token(login, password) when is_bitstring(login) and is_bitstring(password) do
     with %{url: url, headers: headers, body: body} = prepare_request_data(login, password),
          {:ok, %{status_code: status_code, body: body}} <- HTTPoison.post(url, body, headers),
-         true <- status_code in 200..299,
+         :ok <- check_status_code(status_code),
          {:ok, parsed_body} <- Poison.decode(body),
          {:ok, data} <- extract_response_data(parsed_body) do
       {:ok, data}
@@ -14,6 +14,11 @@ defmodule NubankAPI.Auth do
   end
 
   def get_token(_login, _password), do: {:error, "Login and password must be strings!"}
+
+  defp check_status_code(status) when status in 200..299, do: :ok
+
+  defp check_status_code(status),
+    do: {:error, "Expected status code be a range in 200 and 299, but instead it is #{status}"}
 
   defp prepare_request_data(login, password) do
     body =
@@ -39,8 +44,17 @@ defmodule NubankAPI.Auth do
          access_token: parsed_body["access_token"],
          refresh_before: refresh_bofore,
          token_type: parsed_body["token_type"],
-         refresh_token: parsed_body["refresh_token"]
+         refresh_token: parsed_body["refresh_token"],
+         links: parse_api_links(parsed_body)
        }}
     end
+  end
+
+  defp parse_api_links(%{"_links" => links}) do
+    links
+    |> Map.keys()
+    |> Enum.reduce(%{}, fn link_key, indexed_links ->
+      Map.put(indexed_links, String.to_atom(link_key), links[link_key]["href"])
+    end)
   end
 end
