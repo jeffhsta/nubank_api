@@ -1,6 +1,33 @@
 defmodule NubankAPI.Auth do
+  @moduledoc """
+  NubankAPI.Auth is responsable for handle authentication.
+
+  It has a login function that authenticates the user, getting the access token, it's
+  expiration datetime and the refresh token, as well the link for other API features.
+
+  Future implementation will be create the refresh token function.
+  """
+
   alias NubankAPI.Config
 
+  @doc """
+  Get auth token.
+
+  It will return a Map with with the structure:
+  %{
+    access_token: "access token in string",
+    links: %{},
+    refresh_before: "an expiration DateTime in UTC",
+    refresh_token: "refresh token in string"
+    token_type: "bearer"
+  }
+
+  ## Examples
+
+      iex> NubankAPI.transactions(access)
+      {:ok, []}
+
+  """
   def get_token(login, password) when is_bitstring(login) and is_bitstring(password) do
     with %{url: url, headers: headers, body: body} = prepare_request_data(login, password),
          {:ok, %{status_code: status_code, body: body}} <- HTTPoison.post(url, body, headers),
