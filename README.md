@@ -18,7 +18,7 @@ by adding `:nubank_api` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:nubank_api, "~> 0.1.0"}
+    {:nubank_api, "~> 1.0.0"}
   ]
 end
 ```
