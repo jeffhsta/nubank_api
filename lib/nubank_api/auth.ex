@@ -8,13 +8,13 @@ defmodule NubankAPI.Auth do
   Future implementation will be create the refresh token function.
   """
 
-  alias NubankAPI.Config
+  alias NubankAPI.{Config, Access}
 
   @doc """
   Get auth token.
 
   It will return a Map with with the structure:
-  %{
+  %NubankAPI.Access{
     access_token: "access token in string",
     links: %{},
     refresh_before: "an expiration DateTime in UTC",
@@ -26,7 +26,6 @@ defmodule NubankAPI.Auth do
 
       iex> NubankAPI.transactions(access)
       {:ok, []}
-
   """
   def get_token(login, password) when is_bitstring(login) and is_bitstring(password) do
     with %{url: url, headers: headers, body: body} = prepare_request_data(login, password),
@@ -67,7 +66,7 @@ defmodule NubankAPI.Auth do
   defp extract_response_data(parsed_body) do
     with {:ok, refresh_bofore, 0} <- DateTime.from_iso8601(parsed_body["refresh_before"]) do
       {:ok,
-       %{
+       %Access{
          access_token: parsed_body["access_token"],
          refresh_before: refresh_bofore,
          token_type: parsed_body["token_type"],
