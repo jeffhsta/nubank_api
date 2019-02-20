@@ -27,6 +27,7 @@ defmodule NubankAPI.Auth do
       iex> NubankAPI.transactions(access)
       {:ok, []}
   """
+  @spec get_token(String.t(), String.t()) :: {:ok, NubankAPI.Access.t()} | {:error, any}
   def get_token(login, password) when is_bitstring(login) and is_bitstring(password) do
     with %{url: url, headers: headers, body: body} = prepare_request_data(login, password),
          {:ok, %{status_code: status_code, body: body}} <- HTTPoison.post(url, body, headers),
