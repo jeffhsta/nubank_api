@@ -24,3 +24,36 @@ end
 ```
 
 Documentation can be found at [https://hexdocs.pm/nubank_api](https://hexdocs.pm/nubank_api).
+
+## Contribution
+
+### Setup
+
+To setup the project, is needed to have Elixir 1.7 or higher installed and run the the command:
+
+```bash
+$ mix deps.get
+```
+
+### QA
+
+In order to keep the quality of the project is important to create tests, format the code
+and make sure the code style is following the Elixir linter rules.
+
+To run the tests:
+
+```bash
+$ mix test
+```
+
+To the code formater:
+
+```bash
+$ mix format
+```
+
+To run the linter:
+
+```bash
+$ mix credo --strict
+```
