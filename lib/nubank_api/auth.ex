@@ -8,7 +8,7 @@ defmodule NubankAPI.Auth do
   Future implementation will be create the refresh token function.
   """
 
-  alias NubankAPI.{Config, Access}
+  alias NubankAPI.{Access, Config}
 
   @doc """
   Get auth token.
