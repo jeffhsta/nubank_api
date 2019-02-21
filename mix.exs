@@ -24,7 +24,7 @@ defmodule NubankAPI.MixProject do
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:httpoison, "~> 1.5"},
       {:poison, "~> 4.0"},
-      {:credo, "~> 1.0", only: :dev},
+      {:credo, "~> 1.0", only: :dev}
     ]
   end
 
