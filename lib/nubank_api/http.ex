@@ -7,9 +7,9 @@ defmodule NubankAPI.HTTP do
   alias NubankAPI.{Access, Config}
 
   @type link :: atom
-  @type access :: Access.t
-  @type body :: Map.t
-  @type response_body :: Map.t
+  @type access :: Access.t()
+  @type body :: Map.t()
+  @type response_body :: Map.t()
 
   @spec get(link, access) :: {:ok, response_body} | {:error, any}
   def get(link, access = %Access{}) when is_atom(link), do: request(:get, link, access, "")
