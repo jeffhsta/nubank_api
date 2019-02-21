@@ -12,11 +12,9 @@ defmodule NubankAPI do
 
       iex> NubankAPI.transactions(access)
       {:ok, []}
-
   """
 
-  # TODO: check the endpoint for fetch transactions
-  def transactions(%{access_token: token, links: %{some_endpoint: url}}) do
+  def transactions(%{access_token: token, links: %{events: url}}) do
     headers = Config.default_headers() ++ [{"Authorization", "Bearer #{token}"}]
 
     with {:ok, %{body: body}} <- HTTPoison.get(url, headers),
