@@ -5,8 +5,8 @@ defmodule NubankAPI.Feature.Events do
   This link is avaible in NuBankAPI.Access links as response from NubankAPI.Auth.get_token/2.
   """
 
-  alias NubankAPI.Access
   use NubankAPI.Feature
+  alias NubankAPI.{Access, Event}
 
   @link :events
 
@@ -19,7 +19,7 @@ defmodule NubankAPI.Feature.Events do
       {:ok, []}
   """
   def fetch_transactions(access = %Access{}) do
-    with %{"events" => transactions} <- HTTP.get(@link, access),
+    with %{"events" => transactions} <- @http.get(@link, access),
          {:ok, parsed_transactions} <- parse_transactions(transactions) do
       {:ok, parsed_transactions}
     else
@@ -39,7 +39,7 @@ defmodule NubankAPI.Feature.Events do
   defp parse_single_transaction(transaction) do
     {:ok, transaction_datetime, 0} = DateTime.from_iso8601(transaction["time"])
 
-    %{
+    %Event{
       id: transaction["id"],
       description: transaction["description"],
       amount: transaction["amount"],
