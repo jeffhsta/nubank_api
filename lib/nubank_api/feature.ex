@@ -3,7 +3,7 @@ defmodule NubankAPI.Feature do
 
   defmacro __using__(_) do
     quote do
-      alias NubankAPI.HTTP
+      @http Application.get_env(:nubank_api, :http, NubankAPI.HTTPWrapper)
     end
   end
 end
