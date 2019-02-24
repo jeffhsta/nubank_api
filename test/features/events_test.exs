@@ -19,24 +19,26 @@ defmodule NubankAPI.Feature.EventsTest do
      }}
   end
 
-  test "parses the API response to a list of NubankAPI.Event", %{access: access} do
-    expect(HTTP, :get, fn :events, ^access ->
-      %{
-        "events" => [
-          %{
-            "id" => "438F5BBF-92D9-4DA8-A8D1-E647DC3E314D",
-            "description" => "Some description",
-            "time" => "2019-02-09T14:36:15Z",
-            "amount" => "1234",
-            "title" => "A title",
-            "category" => "transaction"
-          }
-        ]
-      }
-    end)
+  describe "NubankAPI.Feature.Events.fetch_transactions" do
+    test "parses the API response to a list of NubankAPI.Event", %{access: access} do
+      expect(HTTP, :get, fn :events, ^access ->
+        %{
+          "events" => [
+            %{
+              "id" => "438F5BBF-92D9-4DA8-A8D1-E647DC3E314D",
+              "description" => "Some description",
+              "time" => "2019-02-09T14:36:15Z",
+              "amount" => "1234",
+              "title" => "A title",
+              "category" => "transaction"
+            }
+          ]
+        }
+      end)
 
-    {:ok, transactions} = Events.fetch_transactions(access)
+      {:ok, transactions} = Events.fetch_transactions(access)
 
-    assert [%Event{} | _] = transactions
+      assert [%Event{} | _] = transactions
+    end
   end
 end
