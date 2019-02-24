@@ -17,8 +17,12 @@ defmodule NubankAPI.HTTPWrapper do
     request(:post, link, access, encoded_body)
   end
 
-  defp request(http_method, link, %{links: links, access_token: token}, encoded_body) do
-    headers = Config.default_headers() ++ [{"Authorization", "Bearer #{token}"}]
+  defp request(http_method, link, access = %Access{}, encoded_body) do
+    %{links: links, access_token: token, token_type: type} = access
+
+    headers =
+      Config.default_headers() ++ [{"Authorization", "#{String.capitalize(type)} #{token}"}]
+
     url = links[link]
     response = HTTPoison.request(http_method, url, encoded_body, headers)
 
@@ -31,5 +35,5 @@ defmodule NubankAPI.HTTPWrapper do
   defp check_status_code(status_code) when status_code in 200..299, do: :ok
 
   defp check_status_code(status_code),
-    do: {:error, "Expected status code be in 200 and 299, but got #{status_code} instead"}
+    do: {:error, "Expected status code be in range 200 and 299, but got #{status_code} instead"}
 end
