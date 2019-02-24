@@ -19,11 +19,8 @@ defmodule NubankAPI.Feature.Events do
       {:ok, []}
   """
   def fetch_transactions(access = %Access{}) do
-    with %{"events" => transactions} <- @http.get(@link, access),
-         {:ok, parsed_transactions} <- parse_transactions(transactions) do
-      {:ok, parsed_transactions}
-    else
-      unmatch_result -> {:error, unmatch_result}
+    with %{"events" => transactions} <- @http.get(@link, access) do
+      parse_transactions(transactions)
     end
   end
 

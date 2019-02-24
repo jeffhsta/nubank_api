@@ -23,11 +23,8 @@ defmodule NubankAPI.HTTPWrapper do
     response = HTTPoison.request(http_method, url, encoded_body, headers)
 
     with {:ok, %{status_code: status_code, body: body}} <- response,
-         :ok <- check_status_code(status_code),
-         {:ok, parsed_body} <- Poison.decode(body) do
-      {:ok, parsed_body}
-    else
-      unmatch_result -> {:error, unmatch_result}
+         :ok <- check_status_code(status_code) do
+      Poison.decode(body)
     end
   end
 
