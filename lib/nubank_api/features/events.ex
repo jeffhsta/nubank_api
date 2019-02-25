@@ -41,7 +41,8 @@ defmodule NubankAPI.Feature.Events do
       description: transaction["description"],
       amount: transaction["amount"],
       time: transaction_datetime,
-      title: transaction["title"]
+      title: transaction["title"],
+      category: String.to_atom(transaction["category"])
     }
   end
 end

@@ -2,21 +2,25 @@ defmodule NubankAPI.Feature.EventsTest do
   use ExUnit.Case, async: true
   import Mox
 
-  alias NubankAPI.Feature.Events
   alias NubankAPI.{Access, Event}
+  alias NubankAPI.Feature.Events
+  alias NubankAPI.Fixture.Events, as: EventsFixture
   alias NubankAPI.Mock.HTTP
 
   setup do
-    {:ok,
-     access: %Access{
-       access_token: "fake_access_token",
-       refresh_before: DateTime.utc_now(),
-       refresh_token: "fake_refresh_token",
-       token_type: "bearer",
-       links: %{
-         events: "https://fakeapi.nubank.com.br/events"
-       }
-     }}
+    events_fixture = NubankAPI.TestHelper.load_fixture(:events)
+
+    access = %Access{
+      access_token: "fake_access_token",
+      refresh_before: DateTime.utc_now(),
+      refresh_token: "fake_refresh_token",
+      token_type: "bearer",
+      links: %{
+        events: "https://fakeapi.nubank.com.br/events"
+      }
+    }
+
+    {:ok, access: access, events_fixture: events_fixture}
   end
 
   describe "NubankAPI.Feature.Events.fetch_transactions" do
@@ -39,6 +43,19 @@ defmodule NubankAPI.Feature.EventsTest do
       {:ok, transactions} = Events.fetch_transactions(access)
 
       assert [%Event{} | _] = transactions
+    end
+
+    test "filter only events from 'transaction' category", %{
+      access: access,
+      events_fixture: events_fixture
+    } do
+      expect(HTTP, :get, fn :events, ^access -> events_fixture end)
+
+      {:ok, transactions} = Events.fetch_transactions(access)
+
+      assert Enum.count(transactions) == 1
+      assert [event = %Event{}] = transactions
+      assert event.category == :transaction
     end
   end
 end

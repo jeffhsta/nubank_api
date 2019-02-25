@@ -1,5 +1,5 @@
 defmodule NubankAPI.Event do
   @moduledoc false
 
-  defstruct [:id, :description, :amount, :time, :title]
+  defstruct [:id, :description, :amount, :time, :title, :category]
 end
