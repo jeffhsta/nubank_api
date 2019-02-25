@@ -40,25 +40,32 @@ defmodule NubankAPI.Feature.Events do
       iex> NubankAPI.Feature.Events.fetch_events(access)
       {:ok, [%NubankAPI.Event{}]}
   """
-  def fetch_events(access = %Access{}) do
-    with %{"events" => events} <- @http.get(@link, access) do
-      {:ok, Enum.map(events, &parse_event/1)}
+  def fetch_events(access = %Access{}, opts \\ []) do
+    category_filter = Keyword.get(opts, :category)
+
+    with %{"events" => events} <- @http.get(@link, access),
+         parsed_events <- Enum.map(events, &parse_event/1),
+         {:ok, filtered_events} <- filter_events(parsed_events, category_filter) do
+      {:ok, filtered_events}
     end
   end
 
   @doc """
-  Fetch transactions.
+  List the known events categories
 
   ## Examples
 
-      iex> NubankAPI.Feature.Events.fetch_transactions(access)
-      {:ok, [%NubankAPI.Event{category: :transaction]}}
+      iex> NubankAPI.Feature.Events.list_known_categories()
+      [:transaction, :payment, ...]
   """
-  def fetch_transactions(access = %Access{}) do
-    with {:ok, events} <- fetch_events(access) do
-      {:ok, Enum.filter(events, &(&1.category == :transaction))}
-    end
-  end
+  def list_known_categories, do: @known_categories
+
+  defp filter_events(events, nil), do: {:ok, events}
+
+  defp filter_events(events, category) when category in @known_categories,
+    do: {:ok, Enum.filter(events, &(&1.category == category))}
+
+  defp filter_events(_events, _category), do: {:error, "Invalid category"}
 
   defp parse_event(event) do
     {:ok, event_datetime, 0} = DateTime.from_iso8601(event["time"])
