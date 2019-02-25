@@ -10,9 +10,17 @@ defmodule NubankAPI.Feature.Events do
 
   @link :events
 
+  @doc """
+  Fetch events from all categories.
+
+  ## Examples
+
+      iex> NubankAPI.Feature.Events.fetch_events(access)
+      {:ok, [%NubankAPI.Event{}]}
+  """
   def fetch_events(access = %Access{}) do
     with %{"events" => events} <- @http.get(@link, access) do
-      parse_events(events)
+      {:ok, Enum.map(events, &parse_event/1)}
     end
   end
 
@@ -22,26 +30,15 @@ defmodule NubankAPI.Feature.Events do
   ## Examples
 
       iex> NubankAPI.Feature.Events.fetch_transactions(access)
-      {:ok, []}
+      {:ok, [%NubankAPI.Event{category: :transaction]}}
   """
   def fetch_transactions(access = %Access{}) do
-    with %{"events" => transactions} <- @http.get(@link, access) do
-      parse_transactions(transactions)
+    with {:ok, events} <- fetch_events(access) do
+      {:ok, Enum.filter(events, &(&1.category == :transaction))}
     end
   end
 
-  defp parse_events(events), do: {:ok, Enum.map(events, &parse_single_event/1)}
-
-  defp parse_transactions(transactions) do
-    parsed_transactions =
-      transactions
-      |> Enum.filter(fn %{"category" => category} -> category == "transaction" end)
-      |> Enum.map(&parse_single_event/1)
-
-    {:ok, parsed_transactions}
-  end
-
-  defp parse_single_event(event) do
+  defp parse_event(event) do
     {:ok, event_datetime, 0} = DateTime.from_iso8601(event["time"])
 
     %Event{

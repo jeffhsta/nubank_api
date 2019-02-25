@@ -4,7 +4,6 @@ defmodule NubankAPI.Feature.EventsTest do
 
   alias NubankAPI.{Access, Event}
   alias NubankAPI.Feature.Events
-  alias NubankAPI.Fixture.Events, as: EventsFixture
   alias NubankAPI.Mock.HTTP
 
   setup do
@@ -34,6 +33,7 @@ defmodule NubankAPI.Feature.EventsTest do
       {:ok, events} = Events.fetch_events(access)
 
       assert Enum.count(events) == expected_lenth
+
       Enum.each(events, fn event ->
         assert %Event{} = event
       end)
