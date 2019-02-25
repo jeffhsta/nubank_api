@@ -35,10 +35,23 @@ defmodule NubankAPI.Feature.Events do
   @doc """
   Fetch events from all categories.
 
+  Args:
+    * `access` - %NubankAPI.Access{} which cotains the access token and the endpoints
+    * `options` - Keyword list of options
+
+  Options:
+    * `:category` - Filter the events by the category, if nil this filter is not applied, by
+      default it's nil
+
   ## Examples
 
       iex> NubankAPI.Feature.Events.fetch_events(access)
       {:ok, [%NubankAPI.Event{}]}
+
+    or
+
+      iex> NubankAPI.Feature.Events.fetch_events(access, category: :transaction)
+      {:ok, [%NubankAPI.Event{category: :transaction}]}
   """
   def fetch_events(access = %Access{}, opts \\ []) do
     category_filter = Keyword.get(opts, :category)
