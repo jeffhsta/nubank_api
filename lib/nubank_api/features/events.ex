@@ -10,6 +10,12 @@ defmodule NubankAPI.Feature.Events do
 
   @link :events
 
+  def fetch_events(access = %Access{}) do
+    with %{"events" => events} <- @http.get(@link, access) do
+      parse_events(events)
+    end
+  end
+
   @doc """
   Fetch transactions.
 
@@ -24,25 +30,27 @@ defmodule NubankAPI.Feature.Events do
     end
   end
 
+  defp parse_events(events), do: {:ok, Enum.map(events, &parse_single_event/1)}
+
   defp parse_transactions(transactions) do
     parsed_transactions =
       transactions
       |> Enum.filter(fn %{"category" => category} -> category == "transaction" end)
-      |> Enum.map(&parse_single_transaction/1)
+      |> Enum.map(&parse_single_event/1)
 
     {:ok, parsed_transactions}
   end
 
-  defp parse_single_transaction(transaction) do
-    {:ok, transaction_datetime, 0} = DateTime.from_iso8601(transaction["time"])
+  defp parse_single_event(event) do
+    {:ok, event_datetime, 0} = DateTime.from_iso8601(event["time"])
 
     %Event{
-      id: transaction["id"],
-      description: transaction["description"],
-      amount: transaction["amount"],
-      time: transaction_datetime,
-      title: transaction["title"],
-      category: String.to_atom(transaction["category"])
+      id: event["id"],
+      description: event["description"],
+      amount: event["amount"],
+      time: event_datetime,
+      title: event["title"],
+      category: String.to_atom(event["category"])
     }
   end
 end

@@ -127,7 +127,7 @@
       "details": {"subcategory": "unknown"},
       "href": "nuapp://transaction/event_id",
       "id": "1DA51F73-3DA3-4C0D-B81B-1F765D99EDF1",
-      "time": "2019-02-25T14:30:00Z123Z",
+      "time": "2019-02-25T14:30:00.123Z",
       "title": "serviços"
     },{
       "category": "tutorial",

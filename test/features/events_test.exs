@@ -23,6 +23,23 @@ defmodule NubankAPI.Feature.EventsTest do
     {:ok, access: access, events_fixture: events_fixture}
   end
 
+  describe "NubankAPI.Feature.Events.fetch_events/1" do
+    test "parses the response from the API to %Event{}", %{
+      access: access,
+      events_fixture: events_fixture
+    } do
+      expect(HTTP, :get, fn :events, ^access -> events_fixture end)
+      expected_lenth = Enum.count(events_fixture["events"])
+
+      {:ok, events} = Events.fetch_events(access)
+
+      assert Enum.count(events) == expected_lenth
+      Enum.each(events, fn event ->
+        assert %Event{} = event
+      end)
+    end
+  end
+
   describe "NubankAPI.Feature.Events.fetch_transactions" do
     test "parses the API response to a list of NubankAPI.Event", %{access: access} do
       expect(HTTP, :get, fn :events, ^access ->
