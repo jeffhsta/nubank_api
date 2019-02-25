@@ -27,7 +27,7 @@ defmodule NubankAPI.Feature.EventsTest do
       access: access,
       events_fixture: events_fixture
     } do
-      expect(HTTP, :get, fn :events, ^access -> events_fixture end)
+      expect(HTTP, :get, fn :events, ^access -> {:ok, events_fixture} end)
       expected_lenth = Enum.count(events_fixture["events"])
 
       {:ok, events} = Events.fetch_events(access)
@@ -45,7 +45,7 @@ defmodule NubankAPI.Feature.EventsTest do
       access: access,
       events_fixture: events_fixture
     } do
-      expect(HTTP, :get, fn :events, ^access -> events_fixture end)
+      expect(HTTP, :get, fn :events, ^access -> {:ok, events_fixture} end)
 
       {:ok, events} = Events.fetch_events(access, category: :transaction)
 

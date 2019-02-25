@@ -43,7 +43,7 @@ defmodule NubankAPI.Feature.Events do
   def fetch_events(access = %Access{}, opts \\ []) do
     category_filter = Keyword.get(opts, :category)
 
-    with %{"events" => events} <- @http.get(@link, access),
+    with {:ok, %{"events" => events}} <- @http.get(@link, access),
          parsed_events <- Enum.map(events, &parse_event/1),
          {:ok, filtered_events} <- filter_events(parsed_events, category_filter) do
       {:ok, filtered_events}
