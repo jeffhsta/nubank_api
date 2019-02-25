@@ -9,6 +9,28 @@ defmodule NubankAPI.Feature.Events do
   alias NubankAPI.{Access, Event}
 
   @link :events
+  @known_categories [
+    :account_limit_set,
+    :anticipate_event,
+    :bill_flow_on_due_date,
+    :bill_flow_paid,
+    :card_activated,
+    :customer_device_authorized,
+    :customer_invitations_changed,
+    :due_day_changed,
+    :earn_offer,
+    :initial_account_limit,
+    :payment,
+    :rewards_canceled,
+    :rewards_fee,
+    :rewards_redemption,
+    :rewards_signup,
+    :transaction,
+    :transaction_reversed,
+    :tutorial,
+    :virtual_card_encouragement,
+    :welcome
+  ]
 
   @doc """
   Fetch events from all categories.

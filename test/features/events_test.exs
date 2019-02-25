@@ -75,4 +75,29 @@ defmodule NubankAPI.Feature.EventsTest do
       assert event.category == :transaction
     end
   end
+
+  describe "NubankAPI.Feature.Events.list_known_categories/0" do
+    test "return a list of known categories as atoms" do
+      categories = Events.list_known_categories()
+
+      Enum.each(categories, fn category ->
+        assert is_atom(category)
+      end)
+    end
+
+    test "return a list of known categories with no duplicates" do
+      categories = Events.list_known_categories()
+
+      expected_lenth =
+        categories
+        |> MapSet.new()
+        |> Enum.count()
+
+      assert expected_lenth == Enum.count(categories)
+
+      Enum.each(categories, fn category ->
+        assert is_atom(category)
+      end)
+    end
+  end
 end
