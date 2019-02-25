@@ -1,0 +1,153 @@
+{
+  "events": [
+    {
+      "amount": 1500000,
+      "category": "account_limit_set",
+      "id": "53CDD99E-5416-483B-B601-5D5F83D9FA4E",
+      "message": "Seu limite para compras é R$ 15.000,00.",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Limite alterado"
+    },{
+      "category": "anticipate_event",
+      "description": "Localiza Aluguel\nVocê ganhou um desconto\nde R$ 0,36",
+      "href": "nuapp://transaction/event_id",
+      "id": "63347A96-8770-4F5B-ADCD-0F95CE2CE831",
+      "message": "Localiza Aluguel\nVocê ganhou um desconto\nde R$ 0,36",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "1 Parcela Antecipada"
+    },{
+      "amount": 270636,
+      "category": "bill_flow_on_due_date",
+      "description": "É normal que o pagamento leve até 3 dias úteis para ser processado.",
+      "href": "nuapp://bill/event_id",
+      "id": "57C2E50A-8A0E-495B-953F-F64D6F95D075",
+      "message": "É normal que o pagamento leve até 3 dias úteis para ser processado.",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Fatura vence hoje"
+    },{
+      "category": "bill_flow_paid",
+      "description": "",
+      "href": "nuapp://bill/event_id",
+      "id": "309D91DB-2471-4C5E-810D-D3FBE0D9A201",
+      "message": "",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Fatura paga"
+    },{
+      "category": "card_activated",
+      "description": "Desbloqueado",
+      "id": "F0CF1663-E781-4543-872A-B987F34BF50C",
+      "message": "Seu cartão foi ativado.",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Seu cartão está"
+    },{
+      "category": "customer_device_authorized",
+      "description": "Seu dispositivo LG Nexus 5x foi autorizado",
+      "id": "2F7E74FF-7061-4AB7-873B-5E5285CFC291",
+      "message": "Seu dispositivo LG Nexus 5x foi autorizado",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Novo dispositivo autorizado"
+    },{
+      "category": "customer_invitations_changed",
+      "description": "Amigos indicados por você terão prioridade na lista",
+      "id": "A3673761-64D0-4A73-9DF2-1EC2FD99AC61",
+      "message": "Amigos indicados por você terão prioridade na lista",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Indique seus amigos!"
+    },{
+      "category": "due_day_changed",
+      "description": "Seus próximos vencimentos são 06 OUT, 09 NOV e 09 DEZ",
+      "id": "1F5A1CA3-F605-4739-9C82-C174E3F4B69E",
+      "message": "Seus próximos vencimentos são 06 OUT, 09 NOV e 09 DEZ",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Data de vencimento alterada"
+    },{
+      "category": "earn_offer",
+      "description": "Você ganhou 34 pts na sua compra Cabify",
+      "id": "E52F6264-C19B-4EFB-8101-F81FBF2A51C7",
+      "message": "Você ganhou 34 pts na sua compra Cabify",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Bonus Cabify!"
+    },{
+      "amount": 125000,
+      "category": "initial_account_limit",
+      "id": "B80B291E-41E2-42EE-B00E-D5E6C5F8A514",
+      "message": "Seu limite para compras é R$ 1.250,00.",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Limite inicial"
+    },{
+      "amount": 385000,
+      "category": "payment",
+      "id": "4CBECEF1-25BE-477B-B63D-F5709A83BB36",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Pagamento recebido"
+    },{
+      "category": "rewards_canceled",
+      "description": "Assinatura cancelada",
+      "id": "54CFA638-2714-4041-BF2C-25AF10B3EB14",
+      "message": "Assinatura cancelada",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Nubank Rewards"
+    },{
+      "amount": 19000,
+      "category": "rewards_fee",
+      "description": "Assinatura",
+      "id": "269DD3DA-64FB-4196-B1EB-29227FC98174",
+      "message": "Assinatura",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Nubank Rewards"
+    },{
+      "category": "rewards_redemption",
+      "description": "Você apagou a compra Ifood*Br e recebeu um crédito de R$ 26,00",
+      "id": "C7288AC6-32C2-4BF2-9F74-ED41FD6F06A7",
+      "message": "Você apagou a compra Ifood*Br e recebeu um crédito de R$ 26,00",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Nubank Rewards"
+    },{
+      "category": "rewards_signup",
+      "description":
+        "Parabéns, agora você acumula pontos em todas as compras e pode usá-los para apagar transações da sua fatura.",
+      "id": "9353FB2F-35A2-4EE4-A628-B85BA2A3EA73",
+      "message":
+        "Parabéns, agora você acumula pontos em todas as compras e pode usá-los para apagar transações da sua fatura.",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Nubank Rewards"
+    },{
+      "amount": 2500,
+      "category": "transaction",
+      "description": "Restaurante da cidade",
+      "details": {"subcategory": "card_present"},
+      "href": "nuapp://transaction/event_id",
+      "id": "DB4A9E0B-9309-4C43-A511-8D764217EF7E",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "restaurante"
+    },{
+      "amount": 300,
+      "category": "transaction_reversed",
+      "description": "Itunes.Com/Bill",
+      "details": {"subcategory": "unknown"},
+      "href": "nuapp://transaction/event_id",
+      "id": "1DA51F73-3DA3-4C0D-B81B-1F765D99EDF1",
+      "time": "2019-02-25T14:30:00Z123Z",
+      "title": "serviços"
+    },{
+      "category": "tutorial",
+      "id": "55ba8e18-84e6-4f18-bd85-f54d3d058ece",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Veja como funciona"
+    },{
+      "category": "virtual_card_encouragement",
+      "description": "",
+      "id": "D01EE926-93FC-403E-9213-FC3EF65FE273",
+      "message": "",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Enquanto seu roxinho está a caminho, use seu Cartão Virtual"
+    },{
+      "category": "welcome",
+      "description": "Nubank!",
+      "id": "D45EAD8D-4584-425D-82A2-7322C7701B20",
+      "message": "Seja bem vindo ao Nubank!",
+      "time": "2019-02-25T14:30:00.123Z",
+      "title": "Bem-vindo ao"
+    }
+  ]
+}
