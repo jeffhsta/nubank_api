@@ -1,0 +1,131 @@
+{
+    "_links" : {
+      "future" : {
+        "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD"
+      },
+      "open" : {
+        "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD"
+      }
+    },
+    "bills" : [
+      {
+        "_links" : {
+          "self" : {
+            "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD"
+          }
+        }, 
+        "state" : "open",
+        "summary" : {
+          "adjustments" : "0",
+          "close_date" : "2019-03-02",
+          "due_date" : "2019-03-09",
+          "effective_due_date" : "2019-03-09",
+          "expenses" : "3333.17",
+          "fees" : "0",
+          "interest" : 0,
+          "interest_charge" : "0",
+          "interest_rate" : "0.14",
+          "interest_reversal" : "0",
+          "international_tax" : "3.928166",
+          "minimum_payment" : 0,
+          "open_date" : "2019-02-02",
+          "paid" : 0,
+          "past_balance" : 0,
+          "payments" : "-3333.81",
+          "precise_minimum_payment" : "0",
+          "precise_total_balance" : "3333.09468587",
+          "previous_bill_balance" : "3333.80651987",
+          "tax" : "0",
+          "total_accrued" : "0",
+          "total_balance" : 333333,
+          "total_credits" : "0",
+          "total_cumulative" : 333333,
+          "total_financed" : "0",
+          "total_international" : "33.498166",
+          "total_national" : "3333.600000",
+          "total_payments" : "-3333.81"
+        }
+      },
+      {
+        "_links" : {
+          "self" : {
+            "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD"
+          }
+        },
+        "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD",
+        "id" : "5f5913g3-fdd0-4520-8b51-d2bc22feckbf",
+        "state" : "overdue",
+        "summary" : {
+          "adjustments" : "-222.98",
+          "close_date" : "2019-02-02",
+          "due_date" : "2019-02-09",
+          "effective_due_date" : "2019-02-09",
+          "expenses" : "2222.88",
+          "fees" : "0",
+          "interest" : 0,
+          "interest_charge" : "0",
+          "interest_rate" : "0.14",
+          "interest_reversal" : "0",
+          "international_tax" : "2.906474",
+          "minimum_payment" : 22222,
+          "open_date" : "2019-01-02",
+          "paid" : 222222,
+          "past_balance" : 0,
+          "payments" : "-2222.71",
+          "precise_minimum_payment" : "222.4709779805",
+          "precise_total_balance" : "2222.80651987",
+          "previous_bill_balance" : "2222.71004587",
+          "remaining_minimum_payment" : 0,
+          "tax" : "0",
+          "total_accrued" : "0",
+          "total_balance" : 222222,
+          "total_credits" : "-159.98",
+          "total_cumulative" : 222222,
+          "total_financed" : "0",
+          "total_international" : "22.136474",
+          "total_national" : "2222.650000",
+          "total_payments" : "-2222.71"
+        }
+      },
+      {
+        "_links" : {
+          "self" : {
+            "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD"
+          }
+        },
+        "href" : "https://https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/AFBCD",
+        "id" : "1a30320g-6cfb-45e3-a1e2-6120adb1665",
+        "state" : "overdue",
+        "summary" : {
+          "adjustments" : "0",
+          "close_date" : "2019-01-02",
+          "due_date" : "2019-01-09",
+          "effective_due_date" : "2019-01-11",
+          "expenses" : "1111.80",
+          "fees" : "0",
+          "interest" : 0,
+          "interest_charge" : "0",
+          "interest_rate" : "0.14",
+          "interest_reversal" : "0",
+          "international_tax" : "11.907916",
+          "minimum_payment" : 0,
+          "open_date" : "2018-12-02",
+          "paid" : 333333,
+          "past_balance" : -44444,
+          "payments" : "-111.79",
+          "precise_minimum_payment" : "0",
+          "precise_total_balance" : "1111.71004587",
+          "previous_bill_balance" : "111.79212987",
+          "tax" : "0",
+          "total_accrued" : "0",
+          "total_balance" : 111111,
+          "total_credits" : "0",
+          "total_cumulative" : 111111,
+          "total_financed" : "0",
+          "total_international" : "555.727916",
+          "total_national" : "1111.980000",
+          "total_payments" : "-555.79"
+        }
+      }
+    ]
+}
