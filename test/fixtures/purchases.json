@@ -1,0 +1,186 @@
+{
+  "transactions": [
+      {
+          "category": "lazer",
+          "amount": 1111,
+          "tags": [],
+          "chargebacks": [],
+          "precise_amount": "11.12",
+          "merchant_id": "174020076999",
+          "time": "2018-06-29T07:31:03Z",
+          "charges": 1,
+          "original_merchant_name": "PP*HUMBLEBUNDL HUMBLEB",
+          "postcode": "99999",
+          "type": "card_not_present",
+          "mcc": "lazer",
+          "approved_reasons": [
+              "normal_approval"
+          ],
+          "expires_on": "2018-07-06",
+          "charges_list": [
+              {
+                  "amount": 1111,
+                  "transaction_id": "5k32e038-ac49-4418-bd50-e1cca19cfz94",
+                  "index": 0,
+                  "account_id": "ca2126b4-4ef9-4ba2-299b-308ebaba1bf1",
+                  "precise_amount": "11.11",
+                  "promotion_reason": "settlement",
+                  "status": "historical",
+                  "id": "2j37ecb6-6a2c-42d8-8l76-azac4c0f2b61",
+                  "precise_amount_usd": "12",
+                  "extras": [
+                      {
+                          "name": "iof",
+                          "amount": 111.1111,
+                          "precise_amount": "1.111111"
+                      }
+                  ],
+                  "post_date": "2018-06-30"
+              }
+          ],
+          "source": "upfront_foreign",
+          "capture_mode": {
+              "entry_mode": "e_commerce_chip",
+              "pin_mode": "not_accepted"
+          },
+          "recurring": false,
+          "customer": "aaaa240b-2d5d-2222-95a7-75cecdcaceced",
+          "account": "5a6126b4-8ef9-4za2-999b-508ebaba1bf1",
+          "card": "5a6126b4-7d6b-4815-8ab6-2d65dd0b6002",
+          "secure_code": false,
+          "status": "settled",
+          "id": "5b35e031-aa49-4428-bc50-e1cca19cfe94",
+          "merchant_name": "Pp*Humblebundl Humbleb",
+          "event_type": "transaction_card_not_present",
+          "_links": {
+              "category": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback_reasons_v4": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "notify_geo": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "categories": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "create_tag": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback_reasons": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "merchant": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "self": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              }
+          },
+          "fx": {
+              "currency_origin": "USD",
+              "amount_origin": 1100,
+              "amount_usd": 1100,
+              "precise_amount_origin": "11",
+              "precise_amount_usd": "11",
+              "exchange_rate": 4.01
+          },
+          "auth_code": "Q4XX2F",
+          "acquirer_id": "231497",
+          "stand_in": false,
+          "country": "USA",
+          "time_wallclock": "2018-06-29T04:20:26"
+      },
+      {
+          "category": "transporte",
+          "amount": 2222,
+          "tags": [],
+          "chargebacks": [],
+          "precise_amount": "22.22",
+          "merchant_id": "539701023040201",
+          "time": "2018-08-22T11:04:12Z",
+          "charges": 1,
+          "original_merchant_name": "Uber Do Brasil Tecnolo",
+          "postcode": "33333333",
+          "type": "card_not_present",
+          "mcc": "transporte",
+          "approved_reasons": [
+              "normal_approval"
+          ],
+          "expires_on": "2018-08-29",
+          "charges_list": [
+              {
+                  "amount": 2222,
+                  "transaction_id": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+                  "index": 0,
+                  "account_id": "5a6123q4-8ei9-4fl2-939b-508gbabacbf1",
+                  "precise_amount": "22.22",
+                  "promotion_reason": "settlement",
+                  "status": "historical",
+                  "id": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+                  "extras": [],
+                  "post_date": "2018-08-23"
+              }
+          ],
+          "source": "upfront_national",
+          "capture_mode": {
+              "entry_mode": "e_commerce_chip",
+              "pin_mode": "not_accepted"
+          },
+          "recurring": true,
+          "customer": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+          "account": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+          "card": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+          "secure_code": false,
+          "status": "settled",
+          "id": "cb7d412c-63ef-479b-a3d5-2de4afb19ad0",
+          "lon": -11.1757409,
+          "lat": -11.9324676,
+          "merchant_name": "Uber do Brasil Tecnolo",
+          "event_type": "transaction_card_not_present",
+          "_links": {
+              "category": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback_reasons_v4": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "notify_geo": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "categories": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "create_tag": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "chargeback_reasons": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "merchant": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              },
+              "self": {
+                  "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+              }
+          },
+          "auth_code": "QKSZX7",
+          "acquirer_id": "116385",
+          "stand_in": false,
+          "country": "BRA",
+          "time_wallclock": "2018-08-22T08:16:51"
+      }
+  ],
+  "_links": {
+      "updates": {
+          "href": "https://prod-s0-webapp-proxy.nubank.com.br/api/proxy/ABC"
+      }
+  }
+}
