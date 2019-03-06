@@ -1,0 +1,40 @@
+defmodule NubankAPI.Purchase do
+  @moduledoc false
+
+  defstruct [
+    :account,
+    :acquirer_id,
+    :amount,
+    :approved_reasons,
+    :auth_code,
+    :capture_mode,
+    :card,
+    :category,
+    :chargebacks,
+    :charges,
+    :charges_list,
+    :country,
+    :customer,
+    :event_type,
+    :id,
+    :expires_on,
+    :mcc,
+    :merchant_id,
+    :merchant_name,
+    :original_merchant_name,
+    :postcode,
+    :precise_amount,
+    :recurring,
+    :secure_code,
+    :source,
+    :stand_in,
+    :status,
+    :time,
+    :time_wallclock,
+    :lon,
+    :lat,
+    :_links,
+    :tags,
+    :fx
+  ]
+end
